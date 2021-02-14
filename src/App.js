@@ -1,25 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { Component } from 'react';
+import Personne from './Component/Personne';
+import { Button } from "react-bootstrap";
 
-function App() {
+class App extends Component {
+
+state = {
+  show: false
+}
+
+handleShow = () => {
+  this.setState({
+    show: !this.state.show
+  })
+}
+
+render() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" >
+        <Button variant="primary" size="lg" blocks
+        onClick={this.handleShow}
+        className="toggle">Toggle</Button>
+      {this.state.show &&
+        <Personne testprops="hello props" />
+      }
     </div>
   );
 }
-
+}
 export default App;
+
