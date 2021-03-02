@@ -18,9 +18,7 @@ handleShow = () => {
 render() {
   return (
     <div className="App" >
-        <Button variant="primary" size="lg" blocks
-        onClick={this.handleShow}
-        className="toggle">Toggle</Button>
+        <Button  variant="warning" onClick={this.handleShow}>Toggle</Button>
       {this.state.show &&
         <Personne testprops="hello props" />
       }
